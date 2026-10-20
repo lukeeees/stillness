@@ -1,26 +1,37 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system_ui, sans-serif;
+}
+
+.logo-font {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.calm-gradient {
+  background: linear-gradient(135deg, #0F2A4D 0%, #1C3A5F 100%);
+}
+
+.breathing-circle {
+  animation: breathe 6s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(143, 174, 143, 0.35);
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(0.85); }
+  50% { transform: scale(1.15); }
+}
+
+.session-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.session-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
