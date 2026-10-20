@@ -35,6 +35,6 @@ A calm, beginner-friendly meditation and mindfulness web app built with Next.js.
 ### Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/stillness.git
+git clone https://github.com/lukeeees/stillness.git
 cd stillness
 npm install
